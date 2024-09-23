@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strconv"
 
-	"golang-rest-boilerplate/pkg/constant"
+	"nongki-test/pkg/constant"
 
 	"github.com/joho/godotenv"
 	"github.com/sirupsen/logrus"

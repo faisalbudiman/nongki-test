@@ -395,8 +395,8 @@ definitions:
 host: localhost:3030
 info:
   contact: {}
-  description: This is a doc for golang-rest-boilerplate.
-  title: golang-rest-boilerplate
+  description: This is a doc for nongki-test.
+  title: nongki-test
   version: 0.0.1
 paths:
   /auth/login:

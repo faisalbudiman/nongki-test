@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	"golang-rest-boilerplate/internal/abstraction"
-	res "golang-rest-boilerplate/pkg/util/response"
+	"nongki-test/internal/abstraction"
+	res "nongki-test/pkg/util/response"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/labstack/echo/v4"

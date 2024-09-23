@@ -3,7 +3,7 @@ package middleware
 import (
 	"net/http"
 
-	res "golang-rest-boilerplate/pkg/util/response"
+	res "nongki-test/pkg/util/response"
 
 	"github.com/labstack/echo/v4"
 )

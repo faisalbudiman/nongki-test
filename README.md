@@ -1,4 +1,4 @@
-# golang-rest-boilerplate
+# nongki-test
 Restfull API in Golang Echo Framework. This project already implemented life-cycle programming and [clean code](http://cleancoder.com/).
 
 
@@ -51,7 +51,7 @@ Docker environment
 in docker environment, migration will get error because the table of 'sample' used UUID v4, please run `CREATE EXTENSION "uuid-ossp";` for postgres.
 ``` bash
 # build 
-$ docker build -t golang-rest-boilerplate:latest .
+$ docker build -t nongki-test:latest .
 
 # config
 sudo sysctl -w vm.max_map_count=262144 # it is required for elasticsearch config
@@ -61,6 +61,12 @@ $ docker compose up
 ```
 
 ## Documentation
+**Using Postman**
+
+We have been export the collection and environment also, so you can try our API's just import the file to your postman in folder ***docs***
+
+
+**Using Swagger**
 
 Install environment
 ``` bash

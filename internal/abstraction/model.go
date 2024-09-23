@@ -3,7 +3,7 @@ package abstraction
 import (
 	"time"
 
-	"golang-rest-boilerplate/pkg/util/date"
+	"nongki-test/pkg/util/date"
 
 	"gorm.io/gorm"
 )

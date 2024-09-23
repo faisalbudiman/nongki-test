@@ -1,10 +1,10 @@
-package sample
+package address
 
 import (
-	"golang-rest-boilerplate/internal/abstraction"
-	"golang-rest-boilerplate/internal/dto"
-	"golang-rest-boilerplate/internal/factory"
-	res "golang-rest-boilerplate/pkg/util/response"
+	"nongki-test/internal/abstraction"
+	"nongki-test/internal/dto"
+	"nongki-test/internal/factory"
+	res "nongki-test/pkg/util/response"
 
 	"github.com/labstack/echo/v4"
 )
@@ -21,22 +21,22 @@ func NewHandler(f *factory.Factory) *handler {
 }
 
 // Get
-// @Summary Get sample
-// @Description Get sample
+// @Summary Get address
+// @Description Get address
 // @Tags area
 // @Accept json
 // @Produce json
 // @Security BearerAuth
-// @param request query dto.SampleGetRequest true "request query"
-// @Success 200 {object} dto.SampleGetResponseDoc
+// @param request query dto.AddressGetRequest true "request query"
+// @Success 200 {object} dto.AddressGetResponseDoc
 // @Failure 400 {object} res.errorResponse
 // @Failure 404 {object} res.errorResponse
 // @Failure 500 {object} res.errorResponse
-// @Router /sample [get]
+// @Router /address [get]
 func (h *handler) Get(c echo.Context) error {
 	cc := c.(*abstraction.Context)
 
-	payload := new(dto.SampleGetRequest)
+	payload := new(dto.AddressGetRequest)
 	if err := c.Bind(payload); err != nil {
 		return res.ErrorBuilder(&res.ErrorConstant.BadRequest, err).Send(c)
 	}
@@ -53,22 +53,22 @@ func (h *handler) Get(c echo.Context) error {
 }
 
 // Get By ID
-// @Summary Get sample by code
-// @Description Get sample by code
+// @Summary Get address by code
+// @Description Get address by code
 // @Tags area
 // @Accept json
 // @Produce json
 // @Security BearerAuth
 // @Param id path int true "id path"
-// @Success 200 {object} dto.SampleGetByIdRequestDoc
+// @Success 200 {object} dto.AddressGetByIdRequestDoc
 // @Failure 400 {object} res.errorResponse
 // @Failure 404 {object} res.errorResponse
 // @Failure 500 {object} res.errorResponse
-// @Router /sample/{id} [get]
-func (h *handler) GetById(c echo.Context) error {
+// @Router /address/{id} [get]
+func (h *handler) GetByID(c echo.Context) error {
 	cc := c.(*abstraction.Context)
 
-	payload := new(dto.SampleGetByIdRequest)
+	payload := new(dto.AddressGetByIdRequest)
 	if err = c.Bind(payload); err != nil {
 		return res.ErrorBuilder(&res.ErrorConstant.BadRequest, err).Send(c)
 	}
@@ -86,22 +86,22 @@ func (h *handler) GetById(c echo.Context) error {
 }
 
 // Create godoc
-// @Summary Create sample
-// @Description Create sample
-// @Tags sample
+// @Summary Create address
+// @Description Create address
+// @Tags address
 // @Accept  json
 // @Produce  json
 // @Security BearerAuth
-// @Param request body dto.SampleCreateRequest true "request body"
-// @Success 200 {object} dto.SampleCreateResponseDoc
+// @Param request body dto.AddressCreateRequest true "request body"
+// @Success 200 {object} dto.AddressCreateResponseDoc
 // @Failure 400 {object} res.errorResponse
 // @Failure 404 {object} res.errorResponse
 // @Failure 500 {object} res.errorResponse
-// @Router /sample [post]
+// @Router /address [post]
 func (h *handler) Create(c echo.Context) error {
 	cc := c.(*abstraction.Context)
 
-	payload := new(dto.SampleCreateRequest)
+	payload := new(dto.AddressCreateRequest)
 	if err := c.Bind(payload); err != nil {
 		return res.ErrorBuilder(&res.ErrorConstant.BadRequest, err).Send(c)
 	}
@@ -118,23 +118,23 @@ func (h *handler) Create(c echo.Context) error {
 }
 
 // Update godoc
-// @Summary Update sample
-// @Description Update sample
-// @Tags sample
+// @Summary Update address
+// @Description Update address
+// @Tags address
 // @Accept  json
 // @Produce  json
 // @Security BearerAuth
 // @Param code path int true "code path"
-// @Param request body dto.SampleUpdateRequest true "request body"
-// @Success 200 {object} dto.SampleUpdateResponseDoc
+// @Param request body dto.AddressUpdateRequest true "request body"
+// @Success 200 {object} dto.AddressUpdateResponseDoc
 // @Failure 400 {object} res.errorResponse
 // @Failure 404 {object} res.errorResponse
 // @Failure 500 {object} res.errorResponse
-// @Router /sample/{code} [put]
-func (h *handler) UpdateByCode(c echo.Context) error {
+// @Router /address/{code} [put]
+func (h *handler) UpdateByID(c echo.Context) error {
 	cc := c.(*abstraction.Context)
 
-	payload := new(dto.SampleUpdateRequest)
+	payload := new(dto.AddressUpdateRequest)
 	if err = c.Bind(payload); err != nil {
 		return res.ErrorBuilder(&res.ErrorConstant.BadRequest, err).Send(c)
 	}
@@ -142,7 +142,7 @@ func (h *handler) UpdateByCode(c echo.Context) error {
 		return res.ErrorBuilder(&res.ErrorConstant.Validation, err)
 	}
 
-	result, err := h.service.UpdateByCode(cc, payload)
+	result, err := h.service.UpdateByID(cc, payload)
 	if err != nil {
 		return res.ErrorResponse(err).Send(c)
 	}
@@ -150,23 +150,23 @@ func (h *handler) UpdateByCode(c echo.Context) error {
 	return res.SuccessResponse(result).Send(c)
 }
 
-// Delete godoc
-// @Summary Delete sample
-// @Description Delete sample
-// @Tags sample
+// Soft Delete godoc
+// @Summary Delete address
+// @Description Delete address
+// @Tags address
 // @Accept  json
 // @Produce  json
 // @Security BearerAuth
 // @Param code path int true "code path"
-// @Success 200 {object}  dto.SampleDeleteResponseDoc
+// @Success 200 {object}  dto.AddressDeleteResponseDoc
 // @Failure 400 {object} res.errorResponse
 // @Failure 404 {object} res.errorResponse
 // @Failure 500 {object} res.errorResponse
-// @Router /sample/{code} [delete]
-func (h *handler) DeleteByCode(c echo.Context) error {
+// @Router /address/soft-delete{code} [delete]
+func (h *handler) SoftDeleteByID(c echo.Context) error {
 	cc := c.(*abstraction.Context)
 
-	payload := new(dto.SampleDeleteRequest)
+	payload := new(dto.AddressDeleteRequest)
 	if err := c.Bind(payload); err != nil {
 		return res.ErrorBuilder(&res.ErrorConstant.BadRequest, err).Send(c)
 	}
@@ -174,7 +174,39 @@ func (h *handler) DeleteByCode(c echo.Context) error {
 		return res.ErrorBuilder(&res.ErrorConstant.Validation, err).Send(c)
 	}
 
-	result, err := h.service.DeleteByCode(cc, payload)
+	result, err := h.service.SoftDeleteByID(cc, payload)
+	if err != nil {
+		return res.ErrorResponse(err).Send(c)
+	}
+
+	return res.SuccessResponse(result).Send(c)
+}
+
+// HardDelete godoc
+// @Summary Delete address
+// @Description Delete address
+// @Tags address
+// @Accept  json
+// @Produce  json
+// @Security BearerAuth
+// @Param code path int true "code path"
+// @Success 200 {object}  dto.AddressDeleteResponseDoc
+// @Failure 400 {object} res.errorResponse
+// @Failure 404 {object} res.errorResponse
+// @Failure 500 {object} res.errorResponse
+// @Router /address/{code} [delete]
+func (h *handler) HardDeleteByID(c echo.Context) error {
+	cc := c.(*abstraction.Context)
+
+	payload := new(dto.AddressDeleteRequest)
+	if err := c.Bind(payload); err != nil {
+		return res.ErrorBuilder(&res.ErrorConstant.BadRequest, err).Send(c)
+	}
+	if err := c.Validate(payload); err != nil {
+		return res.ErrorBuilder(&res.ErrorConstant.Validation, err).Send(c)
+	}
+
+	result, err := h.service.HardDeleteByID(cc, payload)
 	if err != nil {
 		return res.ErrorResponse(err).Send(c)
 	}

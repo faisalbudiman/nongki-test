@@ -1,10 +1,10 @@
 package auth
 
 import (
-	"golang-rest-boilerplate/internal/abstraction"
-	"golang-rest-boilerplate/internal/dto"
-	"golang-rest-boilerplate/internal/factory"
-	res "golang-rest-boilerplate/pkg/util/response"
+	"nongki-test/internal/abstraction"
+	"nongki-test/internal/dto"
+	"nongki-test/internal/factory"
+	res "nongki-test/pkg/util/response"
 
 	"github.com/labstack/echo/v4"
 )

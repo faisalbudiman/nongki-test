@@ -3,12 +3,12 @@ package main
 import (
 	"os"
 
-	db "golang-rest-boilerplate/database"
-	"golang-rest-boilerplate/database/migration"
-	"golang-rest-boilerplate/internal/factory"
-	"golang-rest-boilerplate/internal/http"
-	"golang-rest-boilerplate/internal/middleware"
-	"golang-rest-boilerplate/pkg/util/env"
+	db "nongki-test/database"
+	"nongki-test/database/migration"
+	"nongki-test/internal/factory"
+	"nongki-test/internal/http"
+	"nongki-test/internal/middleware"
+	"nongki-test/pkg/util/env"
 
 	"github.com/labstack/echo/v4"
 	"github.com/sirupsen/logrus"
@@ -22,9 +22,9 @@ func init() {
 	logrus.Info("Choosen environment " + ENV)
 }
 
-// @title golang-rest-boilerplate
+// @title nongki-test
 // @version 0.0.1
-// @description This is a doc for golang-rest-boilerplate.
+// @description This is a doc for nongki-test.
 
 // @securityDefinitions.apikey BearerAuth
 // @in header

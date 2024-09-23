@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is a doc for golang-rest-boilerplate.",
-        "title": "golang-rest-boilerplate",
+        "description": "This is a doc for nongki-test.",
+        "title": "nongki-test",
         "contact": {},
         "version": "0.0.1"
     },

@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"golang-rest-boilerplate/internal/abstraction"
+	"nongki-test/internal/abstraction"
 
 	"github.com/labstack/echo/v4"
 )

@@ -1,8 +1,8 @@
 package dto
 
 import (
-	"golang-rest-boilerplate/internal/model"
-	res "golang-rest-boilerplate/pkg/util/response"
+	"nongki-test/internal/model"
+	res "nongki-test/pkg/util/response"
 )
 
 // Login

@@ -4,10 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"golang-rest-boilerplate/pkg/log"
-	"golang-rest-boilerplate/pkg/util/date"
 	"io/ioutil"
 	"net/http"
+	"nongki-test/pkg/log"
+	"nongki-test/pkg/util/date"
 	"os"
 
 	"github.com/labstack/echo/v4"

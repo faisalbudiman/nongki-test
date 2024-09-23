@@ -3,8 +3,8 @@ package migration
 import (
 	"fmt"
 
-	"golang-rest-boilerplate/database"
-	"golang-rest-boilerplate/internal/model"
+	"nongki-test/database"
+	"nongki-test/internal/model"
 
 	"github.com/sirupsen/logrus"
 	"gorm.io/gorm"
@@ -25,8 +25,8 @@ func Init() {
 	mgConfigurations := map[string]Migration{
 		"V0": &migration{
 			DbModels: &[]interface{}{
-				&model.SampleEntityModel{},
 				&model.UserEntityModel{},
+				&model.AddressEntityModel{},
 			},
 			IsAutoMigrate: true,
 		},

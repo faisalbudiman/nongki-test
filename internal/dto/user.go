@@ -1,9 +1,9 @@
 package dto
 
 import (
-	"golang-rest-boilerplate/internal/abstraction"
-	"golang-rest-boilerplate/internal/model"
-	res "golang-rest-boilerplate/pkg/util/response"
+	"nongki-test/internal/abstraction"
+	"nongki-test/internal/model"
+	res "nongki-test/pkg/util/response"
 )
 
 // Get

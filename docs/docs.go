@@ -1072,8 +1072,8 @@ var SwaggerInfo = swaggerInfo{
 	Host:        "localhost:3030",
 	BasePath:    "/",
 	Schemes:     []string{},
-	Title:       "golang-rest-boilerplate",
-	Description: "This is a doc for golang-rest-boilerplate.",
+	Title:       "nongki-test",
+	Description: "This is a doc for nongki-test.",
 }
 
 type s struct{}

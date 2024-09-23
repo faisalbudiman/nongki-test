@@ -1,6 +1,6 @@
 package response
 
-import "golang-rest-boilerplate/internal/abstraction"
+import "nongki-test/internal/abstraction"
 
 type Meta struct {
 	Success bool                        `json:"success" default:"true"`

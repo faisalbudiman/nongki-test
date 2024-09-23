@@ -4,8 +4,9 @@ import (
 	"os"
 	"time"
 
-	"golang-rest-boilerplate/internal/abstraction"
-	"golang-rest-boilerplate/pkg/util/date"
+	"nongki-test/internal/abstraction"
+	"nongki-test/internal/type_constant"
+	"nongki-test/pkg/util/date"
 
 	"github.com/dgrijalva/jwt-go"
 	"golang.org/x/crypto/bcrypt"
@@ -13,12 +14,15 @@ import (
 )
 
 type UserEntity struct {
-	Id           uint   `json:"-"`
-	Name         string `json:"name" validate:"required"`
-	Email        string `json:"email" validate:"required,email" gorm:"index:idx_user_email,unique"`
-	PasswordHash string `json:"-"`
-	Password     string `json:"password" validate:"required" gorm:"-"`
-	IsActive     bool   `json:"is_active"`
+	Id           uint                     `json:"-"`
+	Name         string                   `json:"name" validate:"required"`
+	Email        string                   `json:"email" validate:"required,email" gorm:"index:idx_user_email,unique"`
+	PasswordHash string                   `json:"-"`
+	Password     string                   `json:"password" validate:"required" gorm:"-"`
+	FullName     string                   `json:"full_name"`
+	Address      string                   `json:"address"`
+	Gender       type_constant.GenderType `json:"gender_type"`
+	IsActive     bool                     `json:"is_active"`
 }
 
 type UserEntityModel struct {

@@ -1,16 +1,16 @@
 package factory
 
 import (
-	"golang-rest-boilerplate/database"
-	"golang-rest-boilerplate/internal/repository"
+	"nongki-test/database"
+	"nongki-test/internal/repository"
 
 	"gorm.io/gorm"
 )
 
 type Factory struct {
-	Db               *gorm.DB
-	SampleRepository repository.Sample
-	UserRepository   repository.User
+	Db                *gorm.DB
+	UserRepository    repository.User
+	AddressRepository repository.Address
 }
 
 func NewFactory() *Factory {
@@ -34,6 +34,6 @@ func (f *Factory) SetupRepository() {
 		panic("Failed setup repository, db is undefined")
 	}
 
-	f.SampleRepository = repository.NewSample(f.Db)
 	f.UserRepository = repository.NewUser(f.Db)
+	f.AddressRepository = repository.NewAddress(f.Db)
 }

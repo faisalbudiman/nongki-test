@@ -1,13 +1,13 @@
 package auth
 
 import (
-	"golang-rest-boilerplate/internal/abstraction"
-	"golang-rest-boilerplate/internal/dto"
-	"golang-rest-boilerplate/internal/factory"
-	"golang-rest-boilerplate/internal/model"
-	"golang-rest-boilerplate/internal/repository"
-	res "golang-rest-boilerplate/pkg/util/response"
-	"golang-rest-boilerplate/pkg/util/trxmanager"
+	"nongki-test/internal/abstraction"
+	"nongki-test/internal/dto"
+	"nongki-test/internal/factory"
+	"nongki-test/internal/model"
+	"nongki-test/internal/repository"
+	res "nongki-test/pkg/util/response"
+	"nongki-test/pkg/util/trxmanager"
 
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"

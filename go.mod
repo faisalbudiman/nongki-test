@@ -1,4 +1,4 @@
-module golang-rest-boilerplate
+module nongki-test
 
 go 1.16
 
@@ -15,7 +15,7 @@ require (
 	github.com/swaggo/echo-swagger v1.3.5
 	github.com/swaggo/swag v1.8.7
 	github.com/teris-io/shortid v0.0.0-20220617161101-71ec9f2aa569
-	golang.org/x/crypto v0.9.0 // indirect
+	golang.org/x/crypto v0.9.0
 	gorm.io/driver/mysql v1.4.3
 	gorm.io/driver/postgres v1.4.5
 	gorm.io/gorm v1.24.1

@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"golang-rest-boilerplate/internal/abstraction"
-	"golang-rest-boilerplate/internal/model"
+	"nongki-test/internal/abstraction"
+	"nongki-test/internal/model"
 
 	"gorm.io/gorm"
 )

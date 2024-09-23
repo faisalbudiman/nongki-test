@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"golang-rest-boilerplate/internal/abstraction"
+	"nongki-test/internal/abstraction"
 
 	"github.com/sirupsen/logrus"
 	"gorm.io/gorm"

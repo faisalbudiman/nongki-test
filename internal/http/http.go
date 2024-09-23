@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"os"
 
-	docs "golang-rest-boilerplate/docs"
-	"golang-rest-boilerplate/internal/app/auth"
-	"golang-rest-boilerplate/internal/app/sample"
-	"golang-rest-boilerplate/internal/factory"
+	docs "nongki-test/docs"
+	"nongki-test/internal/app/address"
+	"nongki-test/internal/app/auth"
+	"nongki-test/internal/factory"
 
 	"github.com/labstack/echo/v4"
 	echoSwagger "github.com/swaggo/echo-swagger"
@@ -37,5 +37,5 @@ func Init(e *echo.Echo, f *factory.Factory) {
 
 	// routes
 	auth.NewHandler(f).Route(e.Group("/auth"))
-	sample.NewHandler(f).Route(e.Group("/sample"))
+	address.NewHandler(f).Route(e.Group("/address"))
 }
